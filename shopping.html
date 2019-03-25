@@ -2,11 +2,64 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <style>body{
+      background-color: lightcoral;
+      }</style>
         <title>Shopping</title>
     </head>
 
     <body>
+
         <p>Welcome to Shopping</p>
+
+	<li>
+		     <a href="index.html">Home</a>
+	</li>
+	<li>
+                <a href="tasks.html">Task</a>
+	</li>
+	<li>
+                <a href="shopping.html">Shopping</a>
+	</li>
+	<li>
+			<a href="https://www.fcbarcelona.com/">Barcelona FC</a>
+	</li>
+   <div>
+       <label>
+            <br><input type="checkbox" id="important"/>
+            Is important
+       </label>
+       <label>
+            <br><input type="checkbox" id="bought"/>
+            Can be bought in groceries
+       </label>
+       <label>  
+            <br>Item to buy:
+            <input id = "iput" />
+            <button onclick="addItem()">Add</button>
+            <br>Shopping list:
+            <ul id = "shoplist"></ul>
+       </label>
+       <script> 
+function addItem(){
+	let list = document.createElement("li");
+	let put = document.getElementById("iput").value;
+	let str = document.createTextNode(put);
+	if(document.getElementById("important").checked)
+	{
+		list.style.color = "red";
+	}
+	if(document.getElementById("bought").checked)
+	{
+		list.style.textDecoration = "underline";
+	}
+	list.appendChild(str);
+	document.getElementById("shoplist").appendChild(list);
     
-    </body>
+    };</script>
+   </div>
+</body>
 </html>
+
+    
+
